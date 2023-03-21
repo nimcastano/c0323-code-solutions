@@ -1,0 +1,62 @@
+var orderHistory = [
+  {
+    orderDate: 'August 4, 2020',
+    orderNumber: '114-3941689-8772232',
+    items: [{
+      type: 'book',
+      name: 'Javascript for Impatient Programmers',
+      author: 'Dr Axel Rauschmayer',
+      cost: 31.55,
+      returnWindow: 'September 7, 2020'
+    }],
+    total: 34.00,
+    deliveryDate: 'August 8, 2020'
+  },
+  {
+    orderDate: 'July 19, 2020',
+    orderNumber: '113-9984268-1280257',
+    items: [{
+      type: 'book',
+      name: 'The Timeless Way of Building',
+      author: 'Christopher Alexander',
+      cost: 41.33,
+      returnWindow: 'August 19, 2020'
+    }],
+    total: 44.53,
+    deliveryDate: 'July 20, 2020'
+  },
+  {
+    orderDate: 'July 4, 2020',
+    orderNumber: '114=2875557-9059409',
+    items: [{
+      type: 'tech',
+      name: 'Gamecube Controller Adaptor',
+      cost: 15.98,
+      returnWindow: 'August 5, 2020'
+    }],
+    itemCost: [15.98],
+    total: 17.22,
+    deliveryDate: 'July 7, 2020'
+  },
+  {
+    orderDate: 'July 3, 2020',
+    orderNumber: '113-2883177-2648248',
+    items: [{
+      type: 'tech',
+      name: 'Gamecube Controller',
+      cost: 94.95,
+      returnWindow: 'August 4, 2020'
+    },
+    {
+      type: 'book',
+      name: 'The Art of Sql',
+      author: 'Stephane Faroult',
+      cost: 33.99,
+      returnWindow: 'August 4, 2020'
+    }],
+    total: 138.93,
+    deliveryDate: 'July 5, 2020'
+  }
+];
+
+console.log(orderHistory[3].items[1].cost);
