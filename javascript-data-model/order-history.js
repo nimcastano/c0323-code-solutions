@@ -34,7 +34,6 @@ var orderHistory = [
       cost: 15.98,
       returnWindow: 'August 5, 2020'
     }],
-    itemCost: [15.98],
     total: 17.22,
     deliveryDate: 'July 7, 2020'
   },
