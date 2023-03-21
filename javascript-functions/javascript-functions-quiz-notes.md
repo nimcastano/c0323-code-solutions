@@ -15,7 +15,7 @@ A return statement is optional but it allows us to return data and stops the fun
 - Describe the parts of a function **call**.
 A function call consists of the function name and the arguments being passed to the function within the parentheses.
 - When comparing them side-by-side, what are the differences between a function **call** and a function **definition**?
-A call is made up of much less code because the code is already written out in the function defintion.
+A call is made up of much less code because the code is already written out in the function defintion. Another difference is that definitions have curly braces.
 - What is the difference between a **parameter** and an **argument**?
 A parameter is a stand-in in the function definition until the function is called and those parameters are replaced by the arguments passed-in. In short, arguments have real values and parameters do not.
 - Why are function **parameters** useful?
