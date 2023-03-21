@@ -59,4 +59,4 @@ var orderHistory = [
   }
 ];
 
-console.log(orderHistory[3].items[1].cost);
+console.log('cost of the second item in the order placed on July 3rd, 2020: $', orderHistory[3].items[1].cost);
