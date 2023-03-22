@@ -22,11 +22,11 @@ const startsWithJ = (str) => {
 };
 
 const isOldEnoughToDrink = (person) => {
-  return (person.age > 20);
+  return (person.age >= 21);
 };
 
 const isOldEnoughToDrive = (person) => {
-  return (person.age > 15);
+  return (person.age >= 16);
 };
 
 const isOldEnoughToDrinkAndDrive = (person) => {
@@ -36,9 +36,9 @@ const isOldEnoughToDrinkAndDrive = (person) => {
 const categorizeAcidity = (pH) => {
   if (pH === 7) {
     return 'neutral';
-  } else if (pH < 7 && pH > 0) {
+  } else if (pH < 7 && pH > -1) {
     return 'acid';
-  } else if (pH < 14 && pH > 7) {
+  } else if (pH <= 14 && pH > 7) {
     return 'base';
   } else {
     return 'invalid pH level';
@@ -46,12 +46,14 @@ const categorizeAcidity = (pH) => {
 };
 
 const introduceWarnerBro = (name) => {
-  if (name === 'yakko' || name === 'wakko') {
-    return "We're the warner brothers!";
-  } else if (name === 'dot') {
-    return "I'm cute~";
-  } else {
-    return 'Goodnight Everybody!';
+  switch (name) {
+    case 'yakko':
+    case 'wakko':
+      return "We're the warner brothers!";
+    case 'dot':
+      return "I'm cute~";
+    default:
+      return 'Goodnight Everybody!';
   }
 };
 
