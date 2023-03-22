@@ -23,7 +23,7 @@ If you want a new element at the end of the array, you can use the push method. 
 - How do you break a string up into an array?
 You can use the split method and split the string up into characters or words.
 - Do string methods change the original string? How would you check if you weren't sure?
-Some do and some do not. To make sure, we can log the value of the result of using a method to the console to ensure that it is teh desired value.
+They do not. To make sure, we can log the value of the result of using a method to the console to ensure that it is the desired value.
 - Roughly how many string methods are there according to the MDN Web docs?
 There are ROUGHLY 60 different string methods according to MDN.
 - Is the return value of a function or method useful in every situation?
