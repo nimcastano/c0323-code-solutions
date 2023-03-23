@@ -22,7 +22,7 @@ const getEvenNumbersToTwenty = () => {
   let currentNumber = 2;
   while (currentNumber <= 20) {
     evenNumbers.push(currentNumber);
-    currentNumber++;
+    currentNumber += 2;
   }
   return evenNumbers;
 };
