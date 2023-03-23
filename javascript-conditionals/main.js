@@ -36,7 +36,7 @@ const isOldEnoughToDrinkAndDrive = (person) => {
 const categorizeAcidity = (pH) => {
   if (pH === 7) {
     return 'neutral';
-  } else if (pH < 7 && pH > -1) {
+  } else if (pH < 7 && pH >= 0) {
     return 'acid';
   } else if (pH <= 14 && pH > 7) {
     return 'base';
