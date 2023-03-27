@@ -15,6 +15,7 @@ const titleCase = title => {
     to: true
   };
   const words = title.toLowerCase().split(' ');
+  console.log(words);
   const cappedWords = [];
   for (let i = 0; i < words.length; i++) {
     if (words[i].toLowerCase().includes('javascript')) {
@@ -25,13 +26,6 @@ const titleCase = title => {
       cappedWords.push(js);
     } else if (words[i].toLowerCase() === 'api') {
       cappedWords.push('API');
-    } else if (words[i].includes(':')) {
-      let str = '';
-      str += words[i][0].toUpperCase();
-      for (let j = 1; j < words[i].length; j++) {
-        str += words[i][j];
-      }
-      cappedWords.push(str);
     } else if (words[i].length <= 3 && i !== 0 && conjun[words[i]]) {
       cappedWords.push(words[i].toLowerCase());
     } else {
@@ -41,6 +35,16 @@ const titleCase = title => {
         str += words[i][j];
       }
       cappedWords.push(str);
+    }
+    if (words[i].includes(':')) {
+      const str = words[i + 1];
+      let cappedStr = str[0].toUpperCase();
+      for (let j = 1; j < str.length; j++) {
+        cappedStr += str[j];
+      }
+      console.log(cappedStr);
+      cappedWords.push(cappedStr);
+      i++;
     }
   }
   return cappedWords.join(' ');
