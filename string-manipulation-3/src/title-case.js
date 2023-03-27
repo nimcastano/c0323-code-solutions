@@ -19,19 +19,20 @@ const titleCase = title => {
   const cappedWords = [];
   for (let i = 0; i < words.length; i++) {
     if (words[i].toLowerCase().includes('javascript')) {
-      let js = 'JavaScript';
-      if (words[i].length > js.length) {
-        js += words[i][words[i].length - 1];
+      let str = 'JavaScript';
+      if (words[i].length > str.length) {
+        str += words[i][words[i].length - 1];
       }
-      cappedWords.push(js);
+      cappedWords.push(str);
     } else if (words[i].toLowerCase() === 'api') {
-      let api = 'API';
-      if (words[i].length > api.length) {
-        api += words[i][words[i].length - 1];
+      let str = 'API';
+      if (words[i].length > str.length) {
+        str += words[i][words[i].length - 1];
       }
-      cappedWords.push(api);
+      cappedWords.push(str);
     } else if (words[i].length <= 3 && i !== 0 && conjun[words[i]]) {
-      cappedWords.push(words[i].toLowerCase());
+      const str = words[i].toLowerCase();
+      cappedWords.push(str);
     } else if (words[i].includes('-')) {
       const hyphen = words[i].indexOf('-');
       let str = '';
