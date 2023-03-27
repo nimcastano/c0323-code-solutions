@@ -19,7 +19,7 @@ const titleCase = title => {
   for (let i = 0; i < words.length; i++) {
     if (words[i].toLowerCase().includes('javascript')) {
       let js = 'JavaScript';
-      if (words[i].length > 10) {
+      if (words[i].length > js.length) {
         js += words[i][words[i].length - 1];
       }
       cappedWords.push(js);
