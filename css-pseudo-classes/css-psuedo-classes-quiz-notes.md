@@ -5,9 +5,9 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is a pseudo-class?
-
+They allow you to change the appearnce of elements when a user is interacting with them.
 - What are CSS pseudo-classes useful for?
-
+They give the user a more interactive experience, seeing how the page changes when they do certain things, such as hover over elements.
 
 ## Notes
 
