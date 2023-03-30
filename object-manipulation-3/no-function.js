@@ -75,14 +75,14 @@ console.log(players);
 
 const winner = (arrOfPlayers) => {
   let max = 0;
-  let goat;
+  let goat = [];
   for (let i = 0; i < arrOfPlayers.length; i++) {
     if (arrOfPlayers[i].score > max) {
       max = arrOfPlayers[i].score;
       goat = arrOfPlayers[i].name;
     }
   }
-  return goat;
+  return goat[0];
 };
 
 console.log(winner(players));
