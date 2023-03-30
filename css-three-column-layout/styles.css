@@ -1,0 +1,48 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.column-one-third {
+  width: calc(100% / 3);
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h2,
+h3,
+p {
+  color: white;
+  font-family: Lato, sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #00a6ff;
+}
+
+p {
+  margin: 0 20px;
+  font-size: 13px;
+}
+
+img {
+  scale: 60%;
+  background-color: white;
+  width: 100%;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: white;
+  width: 40%;
+  margin: 0 auto;
+}
