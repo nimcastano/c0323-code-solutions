@@ -6,7 +6,6 @@
 .row {
   display: flex;
   justify-content: center;
-  align-content: center;
 }
 
 .column-one-third {
