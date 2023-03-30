@@ -5,7 +5,7 @@ input::placeholder {
 }
 
 h2 {
-  color: rgb(236 121 121);
+  color: rgb(232 80 80);
   font-size: 14px;
   font-weight: 500;
   font-family: "Brandon Grotesque", sans-serif;
@@ -14,10 +14,10 @@ h2 {
 
 select,
 input {
-  width: 300px;
+  width: 350px;
   padding: 8px;
-  border-radius: 8px;
-  border-color: lightgrey;
+  border-radius: 4px;
+  border: 1px solid lightgrey;
   height: 35px;
 }
 
@@ -30,20 +30,24 @@ select {
 
 button {
   float: right;
-  background-color: rgb(236 121 121);
+  background-color: rgb(232 80 80);
   color: white;
   padding: 6px 22px;
   border-radius: 30px;
   border: 0;
-  font-size: 16px;
+  font-size: 14px;
+  height: 32px;
+  font-family: "Brandon Grotesque", sans-serif;
 }
 
 form {
-  max-width: 300px;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 label {
   font-family: "Brandon Grotesque", sans-serif;
   font-size: 10px;
   font-weight: 500;
+  margin-left: 10px;
 }
