@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.column-full {
+  flex-basis: 550px;
+  text-align: center;
+}
+
+h1 {
+  letter-spacing: 0.2em;
+}
+
+p {
+  line-height: 1.7;
+}
