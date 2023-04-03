@@ -9,7 +9,7 @@ We log things to the console to make sure that the script is working as we want 
 - What is the purpose of events and event handling?
 It is to update the content in front of the visitor of the webpage, for example, if they click a link and want to go there.
 - Are all possible parameters required to use a JavaScript method or function?
-
+No. It will still run.
 - What method of element objects lets you set up a function to be called when a specific type of event occurs?
 addEventListener()
 - What is a callback function?
@@ -25,7 +25,8 @@ It returns the object or element that the event targeted.
     ```js
     element.addEventListener('click', handleClick())
     ```
-
+The former will wait for the event to be triggered by the user. The latter is a function call and therefore immediately runs the function without user input.
+The latter also runs the function without any arguments.
 
 ## Notes
 
