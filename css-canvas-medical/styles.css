@@ -1,20 +1,24 @@
-/* .container {
+.container {
   display: flex;
+}
+
+#toptop {
+  border-bottom: lightgray;
 }
 
 .row {
   display: flex;
+  justify-content: center;
 }
 
 #logo {
-  text-align: left;
+  display: flex;
   scale: 40%;
-  margin-right: 30%;
+  margin-left: 0;
 }
 
 #top-row {
   display: flex;
-  justify-content: right;
   align-items: center;
 }
 
@@ -23,13 +27,41 @@ button {
   border: white;
 }
 
-.contact-us {
+#contact-us {
   background-color: navy;
   color: white;
 }
 
 .main-img {
-  background-image: url(images/hero.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-} */
+  background-image: url("images/hero.jpg");
+  position: relative;
+  background-size: cover;
+  height: 400px;
+  width: 700px;
+  top: 50px;
+
+  /* color: whitesmoke; */
+}
+
+#emr-title {
+  /* position: absolute; */
+  width: 300px;
+}
+
+#emr-p {
+  /* position: absolute; */
+  width: 400px;
+}
+
+#get-started {
+  position: absolute;
+  background-color: navy;
+  color: white;
+  border-radius: 10px;
+}
+
+.overlay {
+  background: rgb(152 152 152 / 35%);
+  width: 100%;
+  height: 100%;
+}
