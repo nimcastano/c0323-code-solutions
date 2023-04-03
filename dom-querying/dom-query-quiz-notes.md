@@ -15,7 +15,7 @@ Each node in a DOMA is an object with properties and values.
 - What is a DOM Tree?
 A DOM tree depicts the body of an HTML page as a collection of nodes with branches for attributes and text. Gives the browser a picture of how each element is related to each other.
 - Give two examples of `document` methods that retrieve a single element from the DOM.
-getElementById() and querySelector.
+getElementById() and querySelector().
 - Give one example of a `document` method that retrieves multiple elements from the DOM at once.
 querySelectorAll()
 - Why might you want to assign the return value of a DOM query to a variable?
@@ -27,7 +27,7 @@ This guarantees that the elements inside the HTML document have already establis
 - What does `document.querySelector()` take as its argument and what does it return?
 Its parameter is a CSS selector and returns the first element to match it.
 - What does `document.querySelectorAll()` take as its argument and what does it return?
-Its parameter is a CSS selector and returns all elements that match it.
+Its parameter is a CSS selector and returns all elements that match it in a nodelist.
 
 ## Notes
 
