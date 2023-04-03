@@ -1,0 +1,35 @@
+/* .container {
+  display: flex;
+}
+
+.row {
+  display: flex;
+}
+
+#logo {
+  text-align: left;
+  scale: 40%;
+  margin-right: 30%;
+}
+
+#top-row {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+button {
+  background-color: white;
+  border: white;
+}
+
+.contact-us {
+  background-color: navy;
+  color: white;
+}
+
+.main-img {
+  background-image: url(images/hero.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+} */
