@@ -9,6 +9,7 @@
 .row {
   display: flex;
   justify-content: center;
+  font-family: Avenir, serif;
 }
 
 #logo {
@@ -37,20 +38,23 @@ button {
   position: relative;
   background-size: cover;
   height: 400px;
-  width: 700px;
+  width: 800px;
   top: 50px;
-
-  /* color: whitesmoke; */
+  color: whitesmoke;
 }
 
 #emr-title {
-  /* position: absolute; */
+  position: absolute;
   width: 300px;
+  top: 20px;
+  left: 20px;
 }
 
 #emr-p {
-  /* position: absolute; */
+  position: absolute;
   width: 400px;
+  top: 100px;
+  left: 20px;
 }
 
 #get-started {
@@ -58,10 +62,28 @@ button {
   background-color: navy;
   color: white;
   border-radius: 10px;
+  bottom: 40px;
+  left: 20px;
+  height: 40px;
+  width: 120px;
 }
 
 .overlay {
-  background: rgb(152 152 152 / 35%);
+  background: rgb(103 103 103 / 45%);
   width: 100%;
   height: 100%;
+}
+
+.col-full {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.col-half {
+  flex-basis: calc(100% / 2);
+}
+
+#locations {
+  margin-top: 50px;
 }
