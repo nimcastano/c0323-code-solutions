@@ -1,9 +1,11 @@
 .container {
-  margin: 0 20px;
+  margin: 0 100px;
 }
 
 #toptop {
   border-bottom: 1px solid rgb(158 158 158);
+  justify-content: space-between;
+  width: 1100px;
 }
 
 .row {
@@ -13,7 +15,6 @@
 }
 
 #logo {
-  display: flex;
   scale: 40%;
 }
 
@@ -30,6 +31,9 @@ button {
 #contact-us {
   background-color: navy;
   color: white;
+  height: 32px;
+  border-radius: 5px;
+  width: 90px;
 }
 
 .main-img {
@@ -67,6 +71,14 @@ button {
   width: 120px;
 }
 
+#second-get-started {
+  height: 40px;
+  width: 120px;
+  background-color: navy;
+  color: white;
+  border-radius: 10px;
+}
+
 .overlay {
   background: rgb(103 103 103 / 45%);
   width: 100%;
@@ -81,10 +93,29 @@ button {
   text-align: center;
 }
 
+.col-half {
+  flex-basis: calc(100%/2);
+}
+
 #p-clincians {
   width: 500px;
 }
 
 .location-block {
-  background: beige;
+  background: rgb(238 238 238);
+  margin: 50px 0;
+}
+
+#locations > .col-half {
+  margin: 0 20px 20px;
+  text-align: center;
+}
+
+.learn-more {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lean-left {
+  text-align: left;
 }
