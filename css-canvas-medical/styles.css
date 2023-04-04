@@ -1,9 +1,9 @@
 .container {
-  display: flex;
+  margin: 0 20px;
 }
 
 #toptop {
-  border-bottom: lightgray;
+  border-bottom: 1px solid rgb(158 158 158);
 }
 
 .row {
@@ -15,7 +15,6 @@
 #logo {
   display: flex;
   scale: 40%;
-  margin-left: 0;
 }
 
 #top-row {
@@ -34,12 +33,12 @@ button {
 }
 
 .main-img {
+  margin-top: 50px;
   background-image: url("images/hero.jpg");
   position: relative;
   background-size: cover;
   height: 400px;
   width: 800px;
-  top: 50px;
   color: whitesmoke;
 }
 
@@ -74,16 +73,18 @@ button {
   height: 100%;
 }
 
-.col-full {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.col-half {
-  flex-basis: calc(100% / 2);
-}
-
 #locations {
   margin-top: 50px;
+}
+
+.col-full {
+  text-align: center;
+}
+
+#p-clincians {
+  width: 500px;
+}
+
+.location-block {
+  background: beige;
 }
