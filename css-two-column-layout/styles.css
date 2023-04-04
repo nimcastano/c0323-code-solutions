@@ -9,7 +9,7 @@ body {
 }
 
 .column-full {
-  flex-basis: 700px;
+  flex-basis: 55%;
   text-align: center;
 }
 
