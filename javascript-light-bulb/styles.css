@@ -1,0 +1,30 @@
+.light {
+  background: rgb(255 250 235);
+}
+
+.dark {
+  background: rgb(34 34 34);
+}
+
+.circle {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.on {
+  background: rgb(253 230 84);
+  border: 8px solid rgb(254 254 191);
+}
+
+.off {
+  background: rgb(107 107 107);
+}
