@@ -1,0 +1,24 @@
+.word {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: 3em;
+  font-weight: 600;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.curr-letter {
+  border-bottom: 5px solid black;
+}
+
+.wrong-letter {
+  color: rgb(255 34 34);
+}
+
+.right-letter {
+  color: rgb(0 174 0);
+}
