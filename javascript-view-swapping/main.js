@@ -3,6 +3,7 @@ const $tabElements = document.querySelectorAll('.tab');
 const $viewElements = document.querySelectorAll('.view');
 
 $tabContainer.addEventListener('click', (e) => {
+
   if (e.target.matches('.tab')) {
     for (let i = 0; i < $tabElements.length; i++) {
       if (e.target === $tabElements[i]) {
@@ -21,6 +22,5 @@ $tabContainer.addEventListener('click', (e) => {
         $viewElements[i].className = 'view hidden';
       }
     }
-
   }
 });
