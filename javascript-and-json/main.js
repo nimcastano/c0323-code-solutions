@@ -21,11 +21,9 @@ console.log('typeof books: ', typeof books);
 
 const jsonBooks = JSON.stringify(books);
 console.log('json books: ', jsonBooks);
+console.log('json books typeof: ', typeof jsonBooks);
 
-const jsonStudent = `{
-  "Number id": 235024,
-  "name": "Greg"
-}`;
+const jsonStudent = '{"Number id": 235024, "name": "Greg"}';
 
 console.log('json student: ', jsonStudent);
 console.log('json student parsed: ', JSON.parse(jsonStudent));
