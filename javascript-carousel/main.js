@@ -53,6 +53,7 @@ $rightArr.addEventListener('click', (e) => {
 const $span = document.querySelector('span');
 
 $span.addEventListener('click', (e) => {
+  clearInterval(nextImg);
   if (e.target.tagName === 'I') {
     const $dataView = e.target.getAttribute('data-view');
     for (let i = 0; i < $circleNodelist.length; i++) {
