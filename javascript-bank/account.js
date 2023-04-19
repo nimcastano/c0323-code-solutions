@@ -7,7 +7,7 @@ function Account(number, holder) {
 }
 
 Account.prototype.deposit = function (amount) {
-  if (typeof amount === 'number' && amount > 0 && Math.floor(amount) === amount) {
+  if (Number.isInteger(amount) && amount > 0) {
     const obj = new Transaction('deposit', amount);
     this.transactions.push(obj);
     return true;
@@ -16,7 +16,7 @@ Account.prototype.deposit = function (amount) {
 };
 
 Account.prototype.withdraw = function (amount) {
-  if (typeof amount === 'number' && amount > 0 && Math.floor(amount) === amount) {
+  if (Number.isInteger(amount) && amount > 0) {
     const obj = new Transaction('withdrawal', amount);
     this.transactions.push(obj);
     return true;
