@@ -1,5 +1,5 @@
 const $imgNodelist = document.querySelectorAll('img');
-const $circleNodelist = document.querySelectorAll('i');
+const $circleNodelist = document.querySelectorAll('.fa-circle');
 
 const $leftArr = document.querySelector('.left-arrow');
 const $rightArr = document.querySelector('.right-arrow');
@@ -33,7 +33,7 @@ $leftArr.addEventListener('click', (e) => {
   if (current !== 0) {
     current--;
   } else {
-    current = 4;
+    current = $imgNodelist.length - 1;
   }
   hider(current);
   carousel();
@@ -41,7 +41,7 @@ $leftArr.addEventListener('click', (e) => {
 
 $rightArr.addEventListener('click', (e) => {
   clearInterval(nextImg);
-  if (current !== 4) {
+  if (current !== $imgNodelist.length - 1) {
     current++;
   } else {
     current = 0;
