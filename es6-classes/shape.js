@@ -7,7 +7,7 @@ class Shape {
   }
 
   describe() {
-    return 'area: ' + this.area + ' and perimeter: ' + this.perimeter;
+    return `area: ${this.area}, perimeter: ${this.perimeter}`;
   }
 
 }
