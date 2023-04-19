@@ -1,11 +1,11 @@
 const $heading = document.querySelector('.countdown-display');
 
-const interval = setInterval(() => {
+const intrvl = setInterval(() => {
   let count = $heading.textContent;
   count--;
   if (count === 0) {
     $heading.textContent = '~Earth Beeeelooowww Us~';
-    clearInterval(interval);
+    clearInterval(intrvl);
   } else {
     $heading.textContent = count;
   }
