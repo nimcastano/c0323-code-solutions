@@ -59,6 +59,7 @@ $span.addEventListener('click', (e) => {
       if ($circleNodelist[i].getAttribute('data-view') === $dataView) {
         current = i;
         hider(current);
+        carousel();
         break;
       }
     }
