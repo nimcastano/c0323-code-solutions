@@ -12,5 +12,5 @@ class Circle extends Shape {
   }
 }
 
-const circ6 = new Circle(6);
-console.log(circ6.describe());
+const circ7 = new Circle(7);
+console.log(circ7.describe());
