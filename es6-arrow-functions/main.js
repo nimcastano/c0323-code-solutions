@@ -7,16 +7,12 @@ const book = {
 };
 
 console.log('Exercise 1');
-const doubled = numbers.map((n) => {
-  return n * 2;
-});
+const doubled = numbers.map((n) => n * 2);
 console.log('doubled', doubled);
 
 console.log('\n\nExercise 2');
 const actOnEntries = (obj, action) => {
-  Object.entries(obj).forEach((e) => {
-    action(e);
-  });
+  Object.entries(obj).forEach((e) => action(e));
 };
 actOnEntries(book, (entry) => {
   console.log(`${entry[0]} = ${entry[1]}`);
