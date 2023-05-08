@@ -5,15 +5,16 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is the syntax for defining an arrow function?
-  function name, and inside the parentheses is another pair of a parentheses that takes the parameters, the arrow for the function and the actual code block.
+  function name, an assignment operator, pair of parentheses that takes the parameters, the arrow for the function and the actual code block.
 - When an arrow function's body is not surrounded in curly braces (_concise body syntax_), what changes in its functionality?
-  If it is not wrapped in curly braces, you can only write expressions in the body. If it is, then you can also write statements such as throw.
+  If it is not wrapped in curly braces, you can only write one expression in the body. You do not need a return statement. If it is, then you can write statements and multiple lines of code.
+  However, you do need a return statement.
 - When using _concise body syntax_, how do you return an object literal?
   You have to wrap the object in parentheses.
 - In the expression
   `js
-    foo(() => 42);
-    `
+  foo(() => 42);
+  `
   - Identify the arrow function
     The arrow function is what is inside the parentheses. It is the argument being passed into the function foo.
   - How many arguments does the arrow function take?
@@ -35,7 +36,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   - How many arguments does the arrow function take?
     The arrow function takes one argument.
   - What value does it return?
-    It returns a console.log of a string interpolation.
+    It returns undefined.
   - How many arguments are passed to the function `bar`?
     It is only taking one.
   - What type of argument is passed to the function `bar`?
@@ -43,7 +44,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   - When does the arrow function's code get executed?
     When it gets called inside the function bar's code block, if it gets called inside the function bar's code block.
 - How does the value of `this` differ between standard functions and arrow functions?
-  The standard function refers to the closest parent object. The arrow function refers to the Window object since it is at the root of the DOM.
+  The this in a standard function refers to the calling object. The this in an arrow function depends on its lexical scope.
 
 ## Notes
 
