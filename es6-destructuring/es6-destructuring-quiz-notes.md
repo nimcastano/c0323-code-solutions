@@ -13,8 +13,8 @@ After completing this exercise, you should be able to discuss or answer the foll
   The syntax is very similar to object destructuring but instead of the curly braces, they are square brackets. The variable names are also separated by commas.
   There is also an assignment operator after the clsoing square bracket and the name of the array we are retrieving the values from.
 - How can you tell the difference between destructuring and creating `Object`/`Array` literals?
-  Object destructuring is done with curly braces after the declaration statement and array destructuring is done with square brackets after
-  the declaration statement.
+  Object and array destructuring and creation are different because of the placement of the curly/square brackets in relation to the assignment operator.
+  In destructuring, they are on the left side. In creation, they are on the right side.
 
 ## Notes
 
