@@ -11,6 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - Why should a full stack Web developer know that computer processes exist?
   Because it tells us how many programs are running asynchronously, all using a bit of the memory. To ensure optimization,
   we need to keep track of how many programs are running and keep it at a minimum.
+  Also to make sure that the processes we want are running are IN FACT running.
 
 ## Notes
 
