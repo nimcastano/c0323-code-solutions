@@ -20,13 +20,13 @@ After completing this exercise, you should be able to discuss or answer the foll
   - `echo`
     To print a line of code to the terminal.
   - `touch`
-    To add a file in the directory.
+    To update the time the file was updated. Also creates a file in the directory.
   - `mkdir`
     To create a directory.
   - `mv`
-    To rename files or directories.
+    To move/rename files or directories.
   - `rm`
-    To remove files or directories.
+    To remove files. It can remove a directory if its empty.
   - `cp`
     To copy files or directories.
 - What are the three virtues of a great programmer?
