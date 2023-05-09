@@ -39,6 +39,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - How does spread syntax differ from rest syntax?
   It does not. The syntax is exactly the same. But functionally, they are different.
+  Rest is used for destructuring.
 
 ## Notes
 
