@@ -13,7 +13,7 @@ const names = [
 ];
 
 const evens = numbers.filter((el) => el % 2 === 0);
-console.log(evens);
+console.log('evens = ', evens);
 
 const noD = names.filter((el) => !el.toLowerCase().includes('d'));
-console.log(noD);
+console.log('noD = ', noD);
