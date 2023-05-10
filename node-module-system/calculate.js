@@ -2,27 +2,30 @@ import add from './add.js';
 import subtract from './subtract.js';
 import multiply from './multiply.js';
 import divide from './divide.js';
+import powerOf from './power-of.js';
 
-if (process.argv[3] === 'plus') {
-  console.log(
-    'Result: ',
-    add(Number(process.argv[2]), Number(process.argv[4]))
-  );
-} else if (process.argv[3] === 'minus') {
-  console.log(
-    'Result: ',
-    subtract(Number(process.argv[2]), Number(process.argv[4]))
-  );
-} else if (process.argv[3] === 'times') {
-  console.log(
-    'Result: ',
-    multiply(Number(process.argv[2]), Number(process.argv[4]))
-  );
-} else if (process.argv[3] === 'over') {
-  console.log(
-    'Result: ',
-    divide(Number(process.argv[2]), Number(process.argv[4]))
-  );
+const arg1 = process.argv[2];
+const op = process.argv[3];
+const arg2 = process.argv[4];
+
+function result(func) {
+  console.log('Result: ', func(Number(arg1), Number(arg2)));
+}
+
+const opsObj = {
+  plus: add,
+  minus: subtract,
+  times: multiply,
+  over: divide,
+  'power-of': powerOf,
+};
+
+if (isNaN(arg1)) {
+  console.log('invalid argument: ', arg1);
+} else if (isNaN(arg2)) {
+  console.log('invalid argument: ', arg2);
+} else if (!opsObj[process.argv[3]]) {
+  console.log('unknown operator: ', op);
 } else {
-  console.log('invalid operation');
+  result(opsObj[process.argv[3]]);
 }

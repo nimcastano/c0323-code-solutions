@@ -9,7 +9,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What are the advantages of modular programming?
   The advantages include a more structured code with less clutter and a better control flow since it only
   uses programs we need at that time. It also makes it more readable and much less often is one repeating
-  themselves in the code.
+  themselves in the code. Additionally, it is much easier to debug.
 - In JavaScript, how do you make a function in a module available to other modules?
   You have to have an export statement in the same file as said function with the argument being the function
   you want to make available to other modules.
