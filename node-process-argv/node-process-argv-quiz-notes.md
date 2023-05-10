@@ -12,7 +12,8 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the data type of `process.argv` in Node.js?
   It is an array.
 - How do you access the command line arguments in a Node.js program?
-  It is the rest of the elements in the process.argv array after the first index.
+  It is the rest of the elements in the process.argv array after the first index. You can use spread
+  to destructure it or a forLoop.
 
 ## Notes
 
