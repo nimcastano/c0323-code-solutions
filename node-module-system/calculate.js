@@ -24,8 +24,8 @@ if (isNaN(arg1)) {
   console.log('invalid argument: ', arg1);
 } else if (isNaN(arg2)) {
   console.log('invalid argument: ', arg2);
-} else if (!opsObj[process.argv[3]]) {
+} else if (!opsObj[op]) {
   console.log('unknown operator: ', op);
 } else {
-  result(opsObj[process.argv[3]]);
+  result(opsObj[op]);
 }
