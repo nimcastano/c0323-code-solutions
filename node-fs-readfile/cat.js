@@ -4,9 +4,6 @@ import { readFile } from 'node:fs/promises';
 const [, , ...files] = process.argv;
 
 async function readAll(books) {
-  // books.map(async el => {
-  //   return await readFile(el, 'utf8');
-  // })
   const proBooks = books.map(async (el) => {
     return await readFile(el, 'utf8');
   });
