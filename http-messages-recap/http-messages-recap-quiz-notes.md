@@ -17,7 +17,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   The protocol version, a status code and a status text.
 - What are HTTP headers?
   HTTP headers let the clients and the server pass additional information with an
-  HTTP request or response.
+  HTTP request or response. METADATA!
 - Is a body required for a valid HTTP message?
   No because some HTTP requests or responses are simple.
 
