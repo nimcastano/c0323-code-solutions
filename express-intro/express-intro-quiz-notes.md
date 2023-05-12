@@ -11,6 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you add `express` to your package dependencies?
   npm install express
 - What Express application method starts the server and binds it to a network `PORT`?
+  the listen method.
 
 ## Notes
 
