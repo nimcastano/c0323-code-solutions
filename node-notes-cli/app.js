@@ -15,28 +15,27 @@ async function read() {
 }
 
 async function add() {
-  const id = data.nextId;
-  data.nextId++;
+  const id = data.nextId++;
   notesObj[id] = process.argv[3];
   rewrite();
 }
 
 async function poof() {
-  if (notesObj[process.argv[3]]) {
-    delete notesObj[process.argv[3]];
-    rewrite();
-  } else {
-    throw new Error('This ID does not exist!');
+  const id = process.argv[3];
+  if (!notesObj[id]) {
+    throw new Error(`The ID ${id} does not exist!`);
   }
+  delete notesObj[id];
+  rewrite();
 }
 
 async function update() {
-  if (notesObj[process.argv[3]]) {
-    notesObj[process.argv[3]] = process.argv[4];
-    rewrite();
-  } else {
-    throw new Error('This ID does not exist!');
+  const id = process.argv[3];
+  if (!notesObj[id]) {
+    throw new Error(`The ID ${id} does not exist!`);
   }
+  notesObj[id] = process.argv[4];
+  rewrite();
 }
 
 const funcObj = {
@@ -49,7 +48,9 @@ const funcObj = {
 const action = process.argv[2];
 
 try {
-  if (funcObj[action]) {
+  if (!funcObj[action]) {
+    throw new Error(`'${action}' is an invalid operation.`);
+  } else {
     await funcObj[action]();
   }
 } catch (error) {
