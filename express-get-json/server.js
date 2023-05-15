@@ -23,14 +23,14 @@ const grades = {
 
 const app = express();
 
-app.listen(8080, () => {
-  console.log('Server listening to port 8080');
-});
-
 app.get('/api/grades', (req, res) => {
   const gradesArr = [];
   for (const grade in grades) {
     gradesArr.push(grades[grade]);
   }
   res.json(gradesArr);
+});
+
+app.listen(8080, () => {
+  console.log('Server listening to port 8080');
 });
