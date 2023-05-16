@@ -4,12 +4,8 @@ const app = express();
 app.use(express.json());
 
 async function reader() {
-  try {
-    const data = await readFile('data.json', 'utf8');
-    return JSON.parse(data);
-  } catch (error) {
-    console.log('Error: ', error);
-  }
+  const data = await readFile('data.json', 'utf8');
+  return JSON.parse(data);
 }
 
 async function writer(data, res) {
@@ -23,13 +19,18 @@ async function writer(data, res) {
 }
 
 app.get('/api/notes', async (req, res) => {
-  const data = await reader();
-  const notes = data.notes;
-  const notesArr = [];
-  for (const note in notes) {
-    notesArr.push(notes[note]);
+  try {
+    const data = await reader();
+    const notes = data.notes;
+    const notesArr = [];
+    for (const note in notes) {
+      notesArr.push(notes[note]);
+    }
+    res.status(200).json(notesArr);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'an unexpected error occurred' });
   }
-  res.status(200).json(notesArr);
 });
 
 app.get('/api/notes/:id', async (req, res) => {
