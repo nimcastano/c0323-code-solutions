@@ -14,7 +14,8 @@ After completing this exercise, you should be able to discuss or answer the foll
   They are the most widely used kind of database. Learning SQL allows us to use other relational databases and
   gives us portable skills.
 - What is one way to see if PostgreSQL is running?
-  Using the top command in CLI.
+  Using the top command in CLI. Can check using sudo service postgresql status. Can also check our pgweb and if
+  it hangs then postgresql is not working.
 
 ## Notes
 
