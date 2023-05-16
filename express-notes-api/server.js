@@ -1,11 +1,7 @@
 import express from 'express';
 import { readFile, writeFile } from 'node:fs/promises';
-
 const app = express();
-
-const middle = express.json();
-
-app.use(middle);
+app.use(express.json());
 
 async function reader() {
   try {
@@ -60,7 +56,7 @@ app.post('/api/notes', async (req, res) => {
   const data = await reader();
   const notes = data.notes;
   const obj = {};
-  if (!req.body.content || req.body.content === '') {
+  if (!req.body.content) {
     obj.error = `content is a required field`;
     res.status(400).json(obj);
   } else {
@@ -86,7 +82,7 @@ app.delete('/api/notes/:id', async (req, res) => {
   } else {
     delete notes[id];
     await writer(data, res);
-    res.status(204).send();
+    res.sendStatus(204);
   }
 });
 
@@ -98,7 +94,7 @@ app.put('/api/notes/:id', async (req, res) => {
   if (id <= 0 || isNaN(id)) {
     obj.error = `The ID ${id} is not a positive integer.`;
     res.status(400).json(obj);
-  } else if (!req.body.content || req.body.content === '') {
+  } else if (!req.body.content) {
     obj.error = `content is a required field.`;
     res.status(400).json(obj);
   } else if (!notes[id]) {
