@@ -5,9 +5,8 @@ app.use(express.json());
 
 async function reader() {
   try {
-    let data = await readFile('data.json', 'utf8');
-    data = JSON.parse(data);
-    return data;
+    const data = await readFile('data.json', 'utf8');
+    return JSON.parse(data);
   } catch (error) {
     console.log('Error: ', error);
   }
@@ -17,9 +16,7 @@ async function writer(data, res) {
   try {
     await writeFile('data.json', JSON.stringify(data, null, 2));
   } catch (error) {
-    const err = {
-      error: 'An unexpected error occurred.',
-    };
+    const err = { error: 'An unexpected error occurred.' };
     console.error(error);
     res.status(500).json(err);
   }
@@ -39,16 +36,12 @@ app.get('/api/notes/:id', async (req, res) => {
   const data = await reader();
   const notes = data.notes;
   const id = req.params.id;
-  let obj = {};
-  if (id <= 0 || isNaN(id)) {
-    obj.error = `id must be a positive integer`;
-    res.status(400).json(obj);
+  if (isNaN(id) || id <= 0) {
+    res.status(400).json({ error: `id must be a positive integer` });
   } else if (!notes[id]) {
-    obj.error = `cannot find note with id ${id}`;
-    res.status(404).json(obj);
+    res.status(404).json({ error: `cannot find note with id ${id}` });
   } else {
-    obj = notes[id];
-    res.status(200).json(obj);
+    res.status(200).json(notes[id]);
   }
 });
 
@@ -91,7 +84,7 @@ app.put('/api/notes/:id', async (req, res) => {
   const data = await reader();
   const notes = data.notes;
   const obj = {};
-  if (id <= 0 || isNaN(id)) {
+  if (isNaN(id) || id <= 0) {
     obj.error = `The ID ${id} is not a positive integer.`;
     res.status(400).json(obj);
   } else if (!req.body.content) {
