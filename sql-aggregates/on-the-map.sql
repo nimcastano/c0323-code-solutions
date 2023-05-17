@@ -3,4 +3,4 @@ select "co"."name",
   from "countries" as "co"
   join "cities" using ("countryId")
   group by "co"."countryId"
-  order by "co"."name" asc
+  order by "co"."countryId" asc
