@@ -11,7 +11,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you mount a React app (root component) to the DOM?
   ReactDOM.render(component-name, document.getElementById("root"))
 - What are some other popular frontend frameworks?
-  Vue.js, Angular.js, Next.js, jQuery, Semantic, Svelte
+  Vue.js, Angular.js, Semantic, Svelte
 
 ## Notes
 
