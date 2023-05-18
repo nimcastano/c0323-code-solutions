@@ -17,12 +17,34 @@ const errorHandler = (res, error) => {
   res.status(500).json({ error: `an unexpected error occurred` });
 };
 
+const sqlObj = {
+  get: `
+    select *
+      from "grades"`,
+  getId: `
+    select *
+      from "grades"
+      where "gradeId" = $1`,
+  post: `
+    insert into "grades" ("name", "course", "score")
+      values ($1, $2, $3)
+      returning *;`,
+  put: `
+    update "grades"
+      set "name" = $2,
+          "course" = $3,
+          "score" = $4
+      where "gradeId" = $1
+      returning *;`,
+  delete: `
+    delete
+    from "grades"
+    where "gradeId" = $1`,
+};
+
 app.get('/api/grades', async (req, res) => {
   try {
-    const sql = `
-      select *
-      from "grades"
-      `;
+    const sql = sqlObj.get;
     const result = await db.query(sql);
     res.status(200).json(result.rows);
   } catch (error) {
@@ -33,12 +55,14 @@ app.get('/api/grades', async (req, res) => {
 app.get('/api/grades/:gradeId', async (req, res) => {
   try {
     const gradeId = req.params.gradeId;
-    const sql = `
-      select *
-      from "grades"
-      where "gradeId" = $1
-      `;
+    const sql = sqlObj.getId;
     const result = await db.query(sql, [gradeId]);
+    if (!result.rows[0]) {
+      res
+        .status(404)
+        .json({ error: `cannot find grade with 'gradeId' ${gradeId}` });
+      return;
+    }
     res.status(200).json(result.rows);
   } catch (error) {
     errorHandler(res, error);
@@ -59,11 +83,7 @@ app.post('/api/grades', async (req, res) => {
       res.status(400).json({ error: `score must be a positive number` });
       return;
     }
-    const sql = `
-      insert into "grades" ("name", "course", "score")
-      values ($1, $2, $3)
-      returning *;
-      `;
+    const sql = sqlObj.post;
     const params = [name, course, score];
     const result = await db.query(sql, params);
     res.status(201).json(result.rows);
@@ -87,14 +107,7 @@ app.put('/api/grades/:gradeId', async (req, res) => {
       res.status(400).json({ error: `score must be a positive number` });
       return;
     }
-    const sql = `
-      update "grades"
-        set "name" = $2,
-            "course" = $3,
-            "score" = $4
-      where "gradeId" = $1
-      returning *;
-      `;
+    const sql = sqlObj.put;
     const params = [gradeId, name, course, score];
     const result = await db.query(sql, params);
     if (!result.rows[0]) {
@@ -102,10 +115,8 @@ app.put('/api/grades/:gradeId', async (req, res) => {
         .status(404)
         .json({ error: `cannot find grade with 'gradeId' ${gradeId}` });
       return;
-    } else {
-      res.status(200).json(result.rows);
-      return;
     }
+    res.status(200).json(result.rows);
   } catch (error) {
     errorHandler(res, error);
   }
@@ -122,11 +133,7 @@ app.delete('/api/grades/:gradeId', async (req, res) => {
       res.status(400).json({ error: `${gradeId} is an invalid gradeId` });
       return;
     }
-    const sql = `
-      delete
-        from "grades"
-        where "gradeId" = $1
-        `;
+    const sql = sqlObj.delete;
     const params = [gradeId];
     const result = await db.query(sql, params);
     console.log(result);
@@ -135,10 +142,8 @@ app.delete('/api/grades/:gradeId', async (req, res) => {
         .status(404)
         .json({ error: `cannot find grade with 'gradeId' ${gradeId}` });
       return;
-    } else {
-      res.status(201).send(`grade ${gradeId} has been deleted`);
-      return;
     }
+    res.status(201).send(`grade ${gradeId} has been deleted`);
   } catch (error) {
     errorHandler(res, error);
   }
