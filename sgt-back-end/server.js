@@ -7,7 +7,6 @@ app.use(express.json());
 const db = new pg.Pool({
   connectionString: 'postgres://dev:dev@localhost/studentGradeTable',
   ssl: {
-    // Allow non-SSL traffic to localhost
     rejectUnauthorized: false,
   },
 });
@@ -121,7 +120,6 @@ app.put('/api/grades/:gradeId', async (req, res) => {
 app.delete('/api/grades/:gradeId', async (req, res) => {
   try {
     const gradeId = req.params.gradeId;
-    console.log(gradeId);
     if (gradeId === undefined) {
       res.status(400).json({ error: `gradeId is a required field` });
       return;
@@ -132,7 +130,6 @@ app.delete('/api/grades/:gradeId', async (req, res) => {
     const sql = sqlObj.delete;
     const params = [gradeId];
     const result = await db.query(sql, params);
-    console.log(result);
     if (result.rowCount === 0) {
       res
         .status(404)
