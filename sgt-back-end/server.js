@@ -83,7 +83,7 @@ app.post('/api/grades', async (req, res) => {
     const sql = sqlObj.post;
     const params = [name, course, score];
     const result = await db.query(sql, params);
-    res.status(201).json(result.rows);
+    res.status(201).json(result.rows[0]);
   } catch (error) {
     errorHandler(res, error);
   }
