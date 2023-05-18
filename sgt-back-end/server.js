@@ -71,9 +71,7 @@ app.get('/api/grades/:gradeId', async (req, res) => {
 
 app.post('/api/grades', async (req, res) => {
   try {
-    const name = req.body.name;
-    const course = req.body.course;
-    const score = req.body.score;
+    const { name, course, score } = req.body;
     if (!name || !course || !score) {
       res
         .status(400)
@@ -95,9 +93,7 @@ app.post('/api/grades', async (req, res) => {
 app.put('/api/grades/:gradeId', async (req, res) => {
   try {
     const gradeId = req.params.gradeId;
-    const name = req.body.name;
-    const course = req.body.course;
-    const score = req.body.score;
+    const { name, course, score } = req.body;
     if (!name || !course || !score) {
       res
         .status(400)
@@ -116,7 +112,7 @@ app.put('/api/grades/:gradeId', async (req, res) => {
         .json({ error: `cannot find grade with 'gradeId' ${gradeId}` });
       return;
     }
-    res.status(200).json(result.rows);
+    res.status(200).json(result.rows[0]);
   } catch (error) {
     errorHandler(res, error);
   }
@@ -143,7 +139,7 @@ app.delete('/api/grades/:gradeId', async (req, res) => {
         .json({ error: `cannot find grade with 'gradeId' ${gradeId}` });
       return;
     }
-    res.status(201).send(`grade ${gradeId} has been deleted`);
+    res.sendStatus(204);
   } catch (error) {
     errorHandler(res, error);
   }
