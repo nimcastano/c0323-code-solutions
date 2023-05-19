@@ -8,7 +8,9 @@ After completing this exercise, you should be able to discuss or answer the foll
   JSX is a syntax extension to JavaScript and allows us to write HTML elements
   in JS. It converts them to react elements.
 - How does React use JSX to render components?
-  It uses them to render HTML elements in a React component to the DOM.
+  It calls the function whenever it wants the relevant components.
+  Then it parses the JSX from the component and converts it to HTML.
+  Lastly, it will append it to the DOM.
 
 ## Notes
 
