@@ -7,7 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What are props in React?
   Props are the information you pass to a JSX tag, such as className, src etc.
 - How do you declare and access props in a component?
-  The same way you would in an HTML element, by declaring them inside the angle braces after the tag name.
+  You define them as parameters inside an object.
 - How do you pass props to a component?
   When you call the component, define the props as if they were HTML attributes inside the angle braces.
 - How do you write JavaScript expressions in JSX?

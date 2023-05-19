@@ -1,0 +1,17 @@
+.pink {
+  background-color: pink;
+  border: 2px solid burlywood;
+  color: white;
+}
+
+.yellow {
+  background-color: yellow;
+  border: 2px solid gold;
+  color: black;
+}
+
+.cyan {
+  background-color: cyan;
+  border: 2px solid blue;
+  color: white;
+}
