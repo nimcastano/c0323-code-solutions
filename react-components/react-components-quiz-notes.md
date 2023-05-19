@@ -5,14 +5,14 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is a React component?
-  A react component is a function that is written in JSX and returns HTML elements.
+  A react component is a function that returns JSX elements.
 - How do you define a component in React?
-  You define a function just like how you would in vanilla JS. The return statement should be wrapped in
-  parentheses. It should also be wrapped all in one closure. For example, one <div> tag. The component
-  name also has to be in PascalCase.
+  You define a function just like how you would in vanilla JS. The component
+  name also has to be in PascalCase. It takes one parameter. Has to be at the top
+  level of the file.
 - How is a component "rendered" (made visible on the browser page)?
   You use the ReactDOM.render() with two arguments, the component name and the element on the DOM
-  you want it to be appended to.
+  you want it to be appended to. This function calls appendChild().
 
 ## Notes
 
