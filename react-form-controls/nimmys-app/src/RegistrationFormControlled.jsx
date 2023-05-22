@@ -10,7 +10,7 @@ export default function RegistrationFormControlled() {
   };
 
   return (
-    <form id="form" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <label>
         Username
         <input
