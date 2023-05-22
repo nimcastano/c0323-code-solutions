@@ -20,9 +20,9 @@ export default function HotButton({ color, textColor }) {
       ? 'red'
       : isClicked >= 3
       ? 'purple'
-      : 'darkblue';
+      : color;
 
-  textColor = isClicked >= 9 ? 'black' : 'white';
+  textColor = isClicked >= 9 ? 'black' : textColor;
 
   return (
     <button
