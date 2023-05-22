@@ -5,13 +5,13 @@ export default function ToggleButton({ text, bgColor }) {
   const [y, setY] = useState('');
 
   const handleClick = () => {
+    console.log('before setter', isClicked);
     setIsClicked(!isClicked);
+    console.log('after setter', isClicked);
     setY(y + 'Y');
   };
 
-  if (isClicked) {
-    bgColor = 'darkgrey';
-  }
+  bgColor = !isClicked ? bgColor : 'darkgrey';
 
   return (
     <button

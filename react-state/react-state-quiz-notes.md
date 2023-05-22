@@ -10,7 +10,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What are the "Rules of Hooks"? (if necessary, re-read the "Pitfall" box in [State](https://react.dev/learn/state-a-components-memory))
   Hooks can only be called inside React function components.
   Hooks can only be called at the top level of a component.
-  Hooks cannot be conditional.
+  Hooks cannot be called conditionally.
 - What is the purpose of state in React?
   It is a kind-of component-specific memory. It allows components to remember certain things. such as
   indices.
