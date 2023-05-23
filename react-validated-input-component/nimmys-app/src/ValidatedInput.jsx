@@ -10,7 +10,13 @@ export default function ValidatedInput() {
 
   let error = 'A password is required.';
 
-  if (password.length < 8 && password.length > 0) {
+  if (!/\d/.test(password) && password.length >= 8) {
+    error = 'Password must contain a number.';
+  } else if (!/[A-Z]/.test(password) && password.length >= 8) {
+    error = 'Password must contain an uppercase letter.';
+  } else if (!/[!@#$%^&*()]/.test(password) && password.length >= 8) {
+    error = 'Password must contain a special character.';
+  } else if (password.length < 8 && password.length > 0) {
     error = 'Your password is too short.';
   } else if (password.length >= 8) {
     icon = check;
