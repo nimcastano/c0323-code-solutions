@@ -1,13 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 
-/**
- * A container of items.
- * One item is displayed at a time, with buttons to flip through them:
- * - Next and Prev scroll forward and backward one item
- * - An array of buttons scroll to a specific item
- * TODO: The buttons don't work!
- */
 export default function Container({ items }) {
   const [isActive, setIsActive] = useState(0);
 
@@ -24,7 +17,7 @@ export default function Container({ items }) {
         <Indicators
           count={items.length}
           onSelect={setIsActive}
-          index={isActive}
+          activeIndex={isActive}
         />
         <CustomButton
           text="Next"
@@ -35,15 +28,8 @@ export default function Container({ items }) {
   );
 }
 
-/**
- * A component that wraps a DOM button.
- * Props:
- *   text: The button's text
- *
- * TODO: Make the background color a prop, default white.
- * TODO: When clicked, the parent needs to be notified.
- */
 function CustomButton({ text, onShow, bgColor }) {
+  bgColor = bgColor ?? 'white';
   return (
     <button style={{ backgroundColor: bgColor }} onClick={onShow}>
       {text}
@@ -51,20 +37,10 @@ function CustomButton({ text, onShow, bgColor }) {
   );
 }
 
-/**
- * An array of indicators (buttons).
- * Props:
- *   count: The number of indicators to display
- *
- * TODO: When an indicator is selected, the active item in the Container
- *       should switch to the index of the selected indicator.
- *       To avoid confusion, use `onSelect` for the event prop name.
- * TODO: Highlight the active indicator lightblue.
- */
-function Indicators({ count, onSelect, index }) {
+function Indicators({ count, onSelect, activeIndex }) {
   const buttons = [];
   for (let i = 0; i < count; i++) {
-    const color = i === index ? 'lightblue' : 'white';
+    const color = i === activeIndex ? 'lightblue' : undefined;
     buttons.push(
       <CustomButton
         key={i}
