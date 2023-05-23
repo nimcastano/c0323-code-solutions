@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  text-align: left;
+}
+
+.textbox {
+  margin: 0.5rem 1rem 0 0;
+  height: 1.2rem;
+  width: 9rem;
+  border: 2px solid black;
+}
+
+.fa-solid {
+  scale: 150%;
+}
+
+p {
+  font-size: 14px;
+  color: red;
+}
