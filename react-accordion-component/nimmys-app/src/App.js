@@ -29,6 +29,10 @@ const pages = [
   },
 ];
 
+/**
+ *
+ * @returns Container with the pages array passed in to render a string of panels
+ */
 function App() {
   return (
     <div className="Container">
@@ -37,6 +41,11 @@ function App() {
   );
 }
 
+/**
+ *
+ * @param {pages} param0, an array of objects with key, title, descrip properties
+ * @returns clickable panels that check the state and return the state through events
+ */
 function Container({ pages }) {
   const [activeIndex, setActiveIndex] = useState(undefined);
 
@@ -56,7 +65,14 @@ function Container({ pages }) {
 
   return <div>{panels}</div>;
 }
-
+/**
+ *
+ * @param title the title property of an object, string
+ * @param descrip the descrip property of an object, string
+ * @param onShow the state setter that checks if panel is already active, returns an index
+ * @param isActive checks if the activeIndex matches the key property of the object, boolean
+ * @returns panel with the information from the object; also tells the parent when it has been clicked on
+ */
 function Panel({ title, descrip, onShow, isActive }) {
   let dropDown;
   if (isActive) {
