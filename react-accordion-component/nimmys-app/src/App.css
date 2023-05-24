@@ -1,0 +1,36 @@
+.hidden {
+  display: none;
+}
+
+.Container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  align-items: center;
+  margin: 1rem;
+}
+
+.Panel {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 22rem;
+}
+
+.title,
+.descrip {
+  border: 2px solid black;
+}
+
+.title {
+  background: lightgrey;
+  color: black;
+}
+
+.descrip {
+  color: black;
+  text-align: left;
+  padding: 0 1rem;
+}
