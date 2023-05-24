@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import './App.css';
+import Container from './Container';
 
 const pages = [
   {
@@ -37,54 +37,6 @@ function App() {
   return (
     <div className="Container">
       <Container pages={pages} />
-    </div>
-  );
-}
-
-/**
- *
- * @param {pages} param0, an array of objects with key, title, descrip properties
- * @returns clickable panels that check the state and return the state through events
- */
-function Container({ pages }) {
-  const [activeIndex, setActiveIndex] = useState(undefined);
-
-  const panels = pages.map((page) => {
-    return (
-      <Panel
-        key={page.id}
-        title={page.title}
-        descrip={page.descrip}
-        isActive={activeIndex === page.id}
-        onShow={() =>
-          setActiveIndex(activeIndex === page.id ? undefined : page.id)
-        }
-      />
-    );
-  });
-
-  return <div>{panels}</div>;
-}
-/**
- *
- * @param title the title property of an object, string
- * @param descrip the descrip property of an object, string
- * @param onShow the state setter that checks if panel is already active, returns an index
- * @param isActive checks if the activeIndex matches the key property of the object, boolean
- * @returns panel with the information from the object; also tells the parent when it has been clicked on
- */
-function Panel({ title, descrip, onShow, isActive }) {
-  const dropDown = isActive ? (
-    <div className={`descrip`}>
-      <p>{descrip}</p>
-    </div>
-  ) : null;
-  return (
-    <div className="Panel" onClick={onShow}>
-      <div className="title">
-        <h3>{title}</h3>
-      </div>
-      {dropDown}
     </div>
   );
 }
