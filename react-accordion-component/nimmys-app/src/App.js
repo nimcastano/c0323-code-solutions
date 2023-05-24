@@ -3,7 +3,7 @@ import './App.css';
 
 const pages = [
   {
-    key: 0,
+    id: 0,
     title: 'Hypertext Markup Language',
     descrip: `The HyperText Markup Language or HTML is the standard markup language
           for documents designed to be displayed in a web browser. It is often assisted
@@ -11,7 +11,7 @@ const pages = [
           such as JavaScript.`,
   },
   {
-    key: 1,
+    id: 1,
     title: 'Cascading Style Sheets',
     descrip: `Cascading Style Sheets (CSS) is a style sheet language used for describing
           the presentation of a document written in a markup language such as HTML or XML
@@ -19,7 +19,7 @@ const pages = [
           technology of the World Wide Web, alongside HTML and JavaScript.`,
   },
   {
-    key: 2,
+    id: 2,
     title: 'JavaScript',
     descrip: `JavaScript, often abbreviated as JS, is a programming language that is one of 
           the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 
@@ -49,19 +49,19 @@ function App() {
 function Container({ pages }) {
   const [activeIndex, setActiveIndex] = useState(undefined);
 
-  const panels = [];
-
-  for (let i = 0; i < pages.length; i++) {
-    panels.push(
+  const panels = pages.map((page) => {
+    return (
       <Panel
-        key={pages[i].key}
-        title={pages[i].title}
-        descrip={pages[i].descrip}
-        isActive={activeIndex === pages[i].key}
-        onShow={() => setActiveIndex(activeIndex === i ? undefined : i)}
+        key={page.id}
+        title={page.title}
+        descrip={page.descrip}
+        isActive={activeIndex === page.id}
+        onShow={() =>
+          setActiveIndex(activeIndex === page.id ? undefined : page.id)
+        }
       />
     );
-  }
+  });
 
   return <div>{panels}</div>;
 }
@@ -74,16 +74,17 @@ function Container({ pages }) {
  * @returns panel with the information from the object; also tells the parent when it has been clicked on
  */
 function Panel({ title, descrip, onShow, isActive }) {
-  let dropDown;
-  if (isActive) {
-    dropDown = <p>{descrip}</p>;
-  }
+  const dropDown = isActive ? (
+    <div className={`descrip`}>
+      <p>{descrip}</p>
+    </div>
+  ) : null;
   return (
     <div className="Panel" onClick={onShow}>
       <div className="title">
         <h3>{title}</h3>
       </div>
-      <div className={`descrip`}>{dropDown}</div>
+      {dropDown}
     </div>
   );
 }
