@@ -12,25 +12,17 @@ export default function Container({ imgs }) {
     return () => clearInterval(interval);
   }, [player, imgs]);
 
-  const handlePrev = () => {
-    setPlayer((player - 1 + imgs.length) % imgs.length);
-  };
-
-  const handleNext = () => {
-    setPlayer((player + 1) % imgs.length);
-  };
-
   return (
     <div className="carousel">
       <div className="image-arrows">
         <i
           className="arrow left-arrow fa-solid fa-chevron-left"
-          onClick={handlePrev}
+          onClick={() => setPlayer((player - 1 + imgs.length) % imgs.length)}
         />
         <img src={imgs[player].img} alt={imgs[player].name} />
         <i
           className="arrow right-arrow fa-solid fa-chevron-right"
-          onClick={handleNext}
+          onClick={() => setPlayer((player + 1) % imgs.length)}
         />
       </div>
       <div className="progress-btns">
