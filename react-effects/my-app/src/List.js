@@ -13,13 +13,16 @@ export default function List() {
   //    - Handle errors from `readItems`
 
   useEffect(() => {
-    try {
-      setIsLoading(false);
-      setItems(readItems());
-    } catch (err) {
-      setError(err);
+    async function renderitems() {
+      try {
+        setItems(await readItems());
+        setIsLoading(false);
+      } catch (err) {
+        setError(err);
+      }
     }
-  }, [items, error]);
+    renderitems();
+  }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
