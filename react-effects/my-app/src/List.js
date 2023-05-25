@@ -16,9 +16,10 @@ export default function List() {
     async function renderitems() {
       try {
         setItems(await readItems());
-        setIsLoading(false);
       } catch (err) {
         setError(err);
+      } finally {
+        setIsLoading(false);
       }
     }
     renderitems();
