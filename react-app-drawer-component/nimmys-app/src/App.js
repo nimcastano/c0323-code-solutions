@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import AppDrawer from './AppDrawer';
 
 const drawerItems = [
   {
@@ -22,53 +23,26 @@ const drawerItems = [
     type: 'item',
     text: 'Sign In',
   },
+  {
+    id: 4,
+    type: 'item',
+    text: 'Contact Us',
+  },
 ];
 
 /**
  *
  * @returns JSX with overlay, the hideable drawer, and the bar icon to open drawer
  */
+
 function App() {
   const [isActive, setIsActive] = useState(false);
 
-  const shade = isActive ? 'shady' : 'sunny';
-
   return (
     <div className="App">
-      <div
-        className={`overlay ${shade}`}
-        onClick={() => setIsActive(false)}></div>
-      <Drawer
-        items={drawerItems}
-        isActive={isActive}
-        onHide={() => setIsActive(false)}
-      />
-      <i class="fa-solid fa-bars" onClick={() => setIsActive(true)}></i>
+      <AppDrawer items={drawerItems} isActive={isActive} onHide={setIsActive} />
     </div>
   );
 }
 
 export default App;
-
-/**
- *
- * @param {arrOfObjects} contains header and items that are in drawer
- * @param {boolean} tells us if drawer is active
- * @param {onHide} state setter that lets us tell parent that an item has been clicked
- * @returns
- */
-function Drawer({ items, isActive, onHide }) {
-  const hideNseek = isActive ? 'show' : 'hide';
-
-  const itemsLi = items.map((page) => {
-    return page.type === 'header' ? (
-      <h2 key={page.id}>{page.text}</h2>
-    ) : (
-      <h3 onClick={onHide} className="item" key={page.id}>
-        {page.text}
-      </h3>
-    );
-  });
-
-  return <div className={`Drawer ${hideNseek}`}>{itemsLi}</div>;
-}

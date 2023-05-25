@@ -1,9 +1,5 @@
-.App {
-  text-align: left;
-}
-
 .overlay {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   z-index: -2;
@@ -20,32 +16,39 @@
 
 i {
   margin: 2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  z-index: -1;
 }
 
 .Drawer {
-  position: absolute;
-  width: 20%;
+  position: fixed;
+  top: -1rem;
+  width: 18%;
   z-index: 999;
   height: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   transition: transform 0.3s ease-in-out;
   background-color: white;
 }
 
 .hide {
-  transform: translateX(-283px);
+  transform: translateX(-400px);
 }
 
 .show {
   transform: translateX(0);
 }
 
+.header {
+  padding-left: 1rem;
+}
+
 .item {
-  margin: 0.2rem;
+  margin: 0.2rem 0;
   height: 2rem;
   display: flex;
   align-items: center;
+  padding-left: 1rem;
 }
 
 .item:hover {
