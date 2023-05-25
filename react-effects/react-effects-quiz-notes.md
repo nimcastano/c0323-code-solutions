@@ -5,7 +5,7 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - When is a component "mounted" to the DOM?
-  When it is being rendered.
+  When it is first being rendered.
 - What is a React Effect?
   A react effect lets us perform side effects in function components based on non-react
   components/systems.
@@ -14,7 +14,7 @@ After completing this exercise, you should be able to discuss or answer the foll
   If there is no external system involved or your effect is based on another react state/component,
   you shouldn't use effects.
 - When do Effects run?
-  It runs after the first render and after every update.
+  It runs after the first render and after every update of the dependencies.
 - What function is used to declare an Effect?
   useEffect() that takes a function as a parameter.
 - What are Effect dependencies and how do you declare them?
@@ -26,7 +26,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - How do you clean up from an Effect?
   You have to add a cleanup function respective to the first effect.
 - When does the cleanup function run?
-  When the prop value changes.
+  When the dependencies change, so pretty much before every time useEffect is called aside from the first time.
 
 ## Notes
 
