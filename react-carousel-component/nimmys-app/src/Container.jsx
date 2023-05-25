@@ -14,6 +14,7 @@ export default function Container({ imgs }) {
 
   return (
     <div className="carousel">
+      <h2 className="name">{imgs[player].name}</h2>
       <div className="image-arrows">
         <i
           className="arrow left-arrow fa-solid fa-chevron-left"

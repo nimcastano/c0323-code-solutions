@@ -16,6 +16,10 @@
   height: 80%;
 }
 
+.name {
+  margin: 0.5rem;
+}
+
 .arrow {
   margin: 0 1rem;
   scale: 160%;
@@ -26,7 +30,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 90%;
+  height: 80%;
 }
 
 img {
