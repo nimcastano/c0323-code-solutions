@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Overlay from './Overlay';
 
 /**
@@ -8,13 +9,14 @@ import Overlay from './Overlay';
  * @returns
  */
 
-export default function AppDrawer({ items, isActive, onHide }) {
+export default function AppDrawer({ items }) {
+  const [isActive, setIsActive] = useState(false);
   const hideNseek = isActive ? 'show' : 'hide';
 
   return (
     <div>
-      <Overlay isActive={isActive} onHide={onHide} />
-      <i className="fa-solid fa-bars" onClick={() => onHide(true)}></i>
+      <Overlay isActive={isActive} onHide={setIsActive} />
+      <i className="fa-solid fa-bars" onClick={() => setIsActive(true)}></i>
       <div className={`Drawer ${hideNseek}`}>
         {items.map((page) => {
           return page.type === 'header' ? (
@@ -23,7 +25,7 @@ export default function AppDrawer({ items, isActive, onHide }) {
             </h2>
           ) : (
             <h3
-              onClick={() => onHide(false)}
+              onClick={() => setIsActive(false)}
               className={page.type}
               key={page.id}>
               {page.text}

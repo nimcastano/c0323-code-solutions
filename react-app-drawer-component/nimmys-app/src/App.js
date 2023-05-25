@@ -1,5 +1,4 @@
 import './App.css';
-import { useState } from 'react';
 import AppDrawer from './AppDrawer';
 
 const drawerItems = [
@@ -36,11 +35,9 @@ const drawerItems = [
  */
 
 function App() {
-  const [isActive, setIsActive] = useState(false);
-
   return (
     <div className="App">
-      <AppDrawer items={drawerItems} isActive={isActive} onHide={setIsActive} />
+      <AppDrawer items={drawerItems} />
     </div>
   );
 }
