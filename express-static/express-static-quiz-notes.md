@@ -7,6 +7,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What is the purpose of the Express Static middleware?
   It is used to expose a directory or a file to a particular URL so its contents can be publicly accessed
 - What does `express.static()` return?
+  It returns middleware which is a function.
   It returns a HTTP 404 if it cannot find a file so it returns a status code.
 - What are several examples of static files?
   HTML files, images, videos, text files, anything that doesn't change every time it is delivered to users.
