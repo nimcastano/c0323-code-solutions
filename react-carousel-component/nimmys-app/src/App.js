@@ -3,29 +3,34 @@ import Container from './Container';
 
 const players = [
   {
-    key: 0,
+    id: 0,
     name: 'Kobe',
-    img: './players/youngKob.jpeg',
+    img: '/players/youngKob.jpeg',
   },
   {
-    key: 1,
+    id: 1,
     name: 'Mike',
-    img: './players/youngMike.jpeg',
+    img: '/players/youngMike.jpeg',
   },
   {
-    key: 2,
+    id: 2,
     name: 'Bron',
-    img: './players/youngBron.avif',
+    img: '/players/youngBron.avif',
   },
   {
-    key: 3,
+    id: 3,
     name: 'AI',
-    img: './players/youngAI.jpeg',
+    img: '/players/youngAI.jpeg',
   },
   {
-    key: 4,
+    id: 4,
     name: 'Shaq',
-    img: './players/youngShaq.webp',
+    img: '/players/youngShaq.webp',
+  },
+  {
+    id: 5,
+    name: 'KG',
+    img: '/players/youngKev.jpeg',
   },
 ];
 

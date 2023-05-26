@@ -36,11 +36,11 @@ export default function Container({ imgs }) {
 function Indicators({ imgs, onSelect, player }) {
   const dots = [];
   for (let i = 0; i < imgs.length; i++) {
-    const color = i === player ? '' : '-regular';
+    const color = imgs[i].id === player ? '' : '-regular';
     dots.push(
       <i
-        key={imgs[i].key}
-        onClick={() => onSelect(imgs[i].key)}
+        key={imgs[i].id}
+        onClick={() => onSelect(imgs[i].id)}
         className={`dot fa${color} fa-circle`}
       />
     );
