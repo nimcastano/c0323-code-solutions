@@ -13,8 +13,8 @@ export default function Users() {
   /* your code here (hint: useEffect) */
 
   useEffect(() => {
-    try {
-      async function usersGetter() {
+    async function usersGetter() {
+      try {
         const response = await fetch(
           'https://jsonplaceholder.typicode.com/users'
         );
@@ -23,14 +23,14 @@ export default function Users() {
         }
         const jsonData = await response.json();
         setUsers(jsonData);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
       }
-      usersGetter();
-    } catch (error) {
-      setError(error);
-    } finally {
-      setIsLoading(false);
     }
-  }, [error]);
+    usersGetter();
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;

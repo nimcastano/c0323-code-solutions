@@ -3,15 +3,14 @@ import { useEffect, useState } from 'react';
 import UserCard from './UserCard';
 
 export default function User({ userId, onCancel }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
   const [user, setUser] = useState();
 
   /* your code here (hint: useEffect) */
-
   useEffect(() => {
-    try {
-      async function singleUser() {
+    async function singleUser() {
+      try {
         const response = await fetch(
           `https://jsonplaceholder.typicode.com/users/${userId}`
         );
@@ -20,15 +19,14 @@ export default function User({ userId, onCancel }) {
         }
         const jsonData = await response.json();
         setUser(jsonData);
-        console.log(jsonData);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
       }
-      singleUser();
-    } catch (error) {
-      setError(error);
-    } finally {
-      setIsLoading(false);
     }
-  }, [userId, error]);
+    singleUser();
+  }, [userId]);
 
   if (isLoading) {
     return <p>Loading...</p>;
