@@ -1,4 +1,5 @@
 import './Header.css';
+import { Link, Outlet } from 'react-router-dom';
 
 export default function Header(props) {
   return (
@@ -7,12 +8,21 @@ export default function Header(props) {
         <div className="navbar-collapse">
           <ul className="navbar-nav mr-auto">
             {/* TODO: Make these links to About and Catalog, with className "title" */}
-            <li className="nav-item nav-link">About</li>
-            <li className="nav-item nav-link">Catalog</li>
+            <li className="nav-item nav-link">
+              <Link to="/about" className="title">
+                About
+              </Link>
+            </li>
+            <li className="nav-item nav-link">
+              <Link to="/" className="title">
+                Catalog
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
       {/* Render the Outlet here. */}
+      <Outlet />
     </div>
   );
 }
