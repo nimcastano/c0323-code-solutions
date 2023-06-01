@@ -16,23 +16,34 @@ export function useTodos() {
   useEffect(() => {
     if (!todos) {
       async function get() {
-        const bago = await readTodos();
-        setTodos(bago);
+        try {
+          setTodos(await readTodos());
+        } catch (error) {
+          setError(error);
+        }
       }
       get();
     }
   }, [todos]);
 
   async function addTodo(newTodo) {
-    setTodos([...todos, await createTodo(newTodo)]);
+    try {
+      setTodos([...todos, await createTodo(newTodo)]);
+    } catch (error) {
+      setError(error);
+    }
   }
 
   async function toggleCompleted(todoId) {
-    const index = todos.findIndex((el) => el.todoId === todoId);
-    todos[index].isCompleted = !todos[index].isCompleted;
-    const updated = await updateTodo(todos[index]);
-    const newNew = todos.map((el) => (el.todoId === todoId ? updated : el));
-    setTodos(newNew);
+    const thisTodo = todos.find((el) => el.todoId === todoId);
+    thisTodo.isCompleted = !thisTodo.isCompleted;
+    try {
+      const updated = await updateTodo(thisTodo);
+      const newNew = todos.map((el) => (el.todoId === todoId ? updated : el));
+      setTodos(newNew);
+    } catch (error) {
+      setError(error);
+    }
   }
 
   return {
