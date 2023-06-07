@@ -7,9 +7,10 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What does the acronym LIFO mean?
   LIFO stands for last in, first out.
 - What methods are available on a Stack data structure?
-  push(value), pop(value)
+  push(value), pop(), peek()
 - What must you do to access the value at an arbitrary point in a stack (not just the "top")?
-  You must create a helper function.
+  You must create a helper function that pops the top and grabs it. After accessing it, we need to
+  push the values back onto the stack.
 
 ## Notes
 
